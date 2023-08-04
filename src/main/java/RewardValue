@@ -1,0 +1,38 @@
+public class RewardValue {
+    double value;
+    int cash = 0;
+    int miles = 0;
+
+
+    public RewardValue(int milesValue) {
+        value = milesValue;
+        cash = 0;
+        miles = 1;
+    }
+
+    public RewardValue(double cashValue) {
+        value = cashValue;
+        cash = 1;
+        miles = 0;
+    }
+
+    public double getCashValue() {
+        if (cash == 1) {
+            //If value is already in cash
+            return value;
+        } else {
+            //If value is in miles
+            return (value * 0.0035);
+        }
+    }
+
+    public double getMilesValue() {
+        if (miles == 1) {
+            //If value is already in miles
+            return value;
+        } else {
+            //If value is in miles
+            return (value / 0.0035);
+        }
+    }
+}
